@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
+vol=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '/Volume:/{print $5}')
+if [ "$muted" = "yes" ]; then
+  echo "MUTED"
+else
+  echo "$vol"
+fi
