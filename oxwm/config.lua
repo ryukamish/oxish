@@ -252,7 +252,8 @@ oxwm.key.bind({}, "XF86AudioRaiseVolume", oxwm.spawn({ "~/.local/bin/volume-cont
 oxwm.key.bind({}, "XF86AudioMute", oxwm.spawn({ "~/.local/bin/volume-control mute" }))
 oxwm.key.bind({ modkey }, "XF86AudioMute", oxwm.spawn({ "~/.local/bin/switch-audio" }))
 
-oxwm.key.bind({}, "XF86Tools", oxwm.spawn({ "pavucontrol" }))
+-- Turn off the display
+oxwm.key.bind({ modkey }, "T", oxwm.spawn({ "sleep 1;xset dpms force off" }))
 
 -- Keybind overlay - Shows important keybindings on screen
 oxwm.key.bind({ modkey, "Shift" }, "Slash", oxwm.show_keybinds())
