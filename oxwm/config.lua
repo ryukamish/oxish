@@ -242,18 +242,27 @@ oxwm.key.bind({ modkey }, "S", oxwm.spawn({ "sh", "-c", "maim -s | xclip -select
 oxwm.key.bind({ modkey }, "Q", oxwm.client.kill())
 oxwm.key.bind({ modkey }, "B", oxwm.spawn({ browser }))
 oxwm.key.bind({ modkey }, "E", oxwm.spawn({ "pcmanfm" }))
--- User scripts
+--------------- User scripts ----------
+---------------------------------------
+-- Change wallpaper
 oxwm.key.bind({ modkey }, "W", oxwm.spawn({ "~/.local/bin/xwall" }))
+-- Change brightness of external monitors
 oxwm.key.bind({ modkey }, "Equal", oxwm.spawn({ "ddcutil setvcp 10 + 5" }))
 oxwm.key.bind({ modkey }, "Minus", oxwm.spawn({ "ddcutil setvcp 10 - 5" }))
+-- brightness control for inbuilt display with brightnessctl
+oxwm.key.bind({ modkey }, "XF86MonBrightnessDown", oxwm.spawn({ "brightnessctl set -10%" }))
+oxwm.key.bind({ modkey }, "XF86MonBrightnessUp", oxwm.spawn({ "brightnessctl set +10%" }))
+-- Turn off the display
+-- TODO: Implement a better one to toggle between dpms states
+-- After using this keybind dpms is set to enable which is not wanted
+oxwm.key.bind({ modkey }, "T", oxwm.spawn({ "sleep 1;xset dpms force off" }))
+-- Powermenu
+oxwm.key.bind({ modkey, "Shift" }, "P", oxwm.spawn({ "~/.local/bin/ox-power" }))
 -- Audio controls
 oxwm.key.bind({}, "XF86AudioLowerVolume", oxwm.spawn({ "~/.local/bin/volume-control down" }))
 oxwm.key.bind({}, "XF86AudioRaiseVolume", oxwm.spawn({ "~/.local/bin/volume-control up" }))
 oxwm.key.bind({}, "XF86AudioMute", oxwm.spawn({ "~/.local/bin/volume-control mute" }))
 oxwm.key.bind({ modkey }, "XF86AudioMute", oxwm.spawn({ "~/.local/bin/switch-audio" }))
-
--- Turn off the display
-oxwm.key.bind({ modkey }, "T", oxwm.spawn({ "sleep 1;xset dpms force off" }))
 
 -- Keybind overlay - Shows important keybindings on screen
 oxwm.key.bind({ modkey, "Shift" }, "Slash", oxwm.show_keybinds())
