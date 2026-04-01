@@ -48,7 +48,7 @@ local tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 -- local tags = { "", "󰊯", "", "", "󰙯", "󱇤", "", "󱘶", "󰧮" } -- Example of nerd font icon tags
 
 -- Font for the status bar (use "fc-list" to see available fonts)
-local bar_font = "monospace:style=Bold:size=10"
+local bar_font = "JetBrainsMono Nerd Font Mono:style=Bold:size=10"
 
 -- Define your blocks
 -- Similar to widgets in qtile, or dwmblocks
@@ -384,3 +384,7 @@ oxwm.key.chord({
 -- oxwm.autostart("nm-applet")
 oxwm.autostart("udiskie")
 oxwm.autostart("feh")
+-- Audio
+oxwm.autostart("pipewire")
+oxwm.autostart("pipewire-pulse")
+oxwm.autostart("wireplumber")
