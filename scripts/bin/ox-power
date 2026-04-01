@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+run_prompt=$(printf '%b\n' "Suspend\nHibernate\nReboot\nPoweroff" |
+  rofi -dmenu -p "" -i -theme-str "window{width:10em;height:15em;}")
+case "$run_prompt" in
+Suspend)
+  loginctl suspend
+  ;;
+Hibernate)
+  loginctl hibernate
+  ;;
+Reboot)
+  loginctl reboot
+  ;;
+Poweroff)
+  loginctl poweroff
+  ;;
+esac
