@@ -190,6 +190,7 @@ oxwm.rule.add({ instance = "gl", floating = true })
 oxwm.rule.add({ instance = "pavucontrol", floating = true })
 oxwm.rule.add({ instance = "blueman-manager", floating = true })
 oxwm.rule.add({ instance = "strawberry", floating = true })
+oxwm.rule.add({ instance = "qbittorrent", floating = true })
 
 -- To find window properties, use xprop and click on the window
 -- WM_CLASS(STRING) shows both instance and class (instance, class)
