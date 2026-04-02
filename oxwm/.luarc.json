@@ -1,6 +1,6 @@
 {
   "workspace.library": [
-    "/usr/bin/oxwm"
+    "/usr/share/oxwm"
   ]
 }
 
